@@ -1,145 +1,71 @@
-# EX 2 Data Manipulation Language (DML) Commands and built in functions in SQL
+# EXP NO 1: DATA DEFINITION LANGUGE COMMANDS IN RDBMS
+
 ## AIM:
-To create a manager database and execute DML queries using SQL.
+To create a student database and execute DDL queries using SQL.
 
 
-## DML(Data Manipulation Language)
+## DDL (Data Definition Language)
 <div align="justify">
-The SQL commands that deal with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
+DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. DDL is a set of SQL commands used to create, modify, and delete database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.
+</div>
+ 
+## List of DDL commands: 
+<div align="justify">
+CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
+DROP: This command is used to delete objects from the database.
+ALTER: This is used to alter the structure of the database.
+TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+RENAME: This is used to rename an object existing in the database.
 </div>
 
-## List of DML commands: 
-<div align="justify">
-INSERT: It is used to insert data into a table.<br>
-UPDATE: It is used to update existing data within a table.<br>
-DELETE: It is used to delete records from a database table.<br>
-</div>
+## Query:
+### 1) Create a table student with the following fieds rollno,name,age,address,phoneno.
 
-## Create the table as given below:
-```sql
-create table manager(enumber number(6),ename char(15),salary number(5),commission number(4),annualsalary number(7),Hiredate date,designation char(10),deptno number(2),reporting char(10));
-```
-## insert the following values into the table
-```sql
-insert into manager values(7369,'Dharsan',2500,500,30000,'30-June-81','clerk',10,'John');
-insert into manager values(7839,'Subu',3000,400,36000,'1-Jul-82','manager',null,'James');
-insert into manager values(7934,'Aadhi',3500,300,42000,'1-May-82','manager',30,NULL);
-insert into manager values(7788,'Vikash',4000,0,48000,'12-Aug-82','clerk',50,'Bond');
-```
+### SQL QUERY: 
 
-### Q1) Update all the records of manager table by increasing 10% of their salary as bonus.
+create table student(rollno int,name char(20),age int,addr varchar(20),phoneno int);
 
-### QUERY:
+### OUTPUT:
+![image](https://github.com/ARUNKUMART9968/G2_DBMS/assets/121215794/490a6bfd-05f1-4789-8526-274d786999c9)
+
+### 2) Change the above student table by adding another attribute department
+
+### SQL QUERY: 
+
+alter table student add department char(30);
 
 
 ### OUTPUT:
+![image](https://github.com/ARUNKUMART9968/G2_DBMS/assets/121215794/9ee913f2-a82f-4b3d-a2bb-d5f2254184d1)
 
-### Q2) Delete the records from manager table where the salary less than 2750.
+### 3) Drop the student table
+ 
+### SQL QUERY: 
 
-
-### QUERY:
-
-
-### OUTPUT:
-
-### Q3) Display each name of the employee as “Name” and annual salary as “Annual Salary” (Note: Salary in emp table is the monthly salary)
-
-
-### QUERY:
+drop table student;
 
 
 ### OUTPUT:
-
-### Q5)	List the names of Clerks from emp table.
-
-
-### QUERY:
+![image](https://github.com/ARUNKUMART9968/G2_DBMS/assets/121215794/fbbd4d76-7f7f-4a96-876d-ea3f7688a81f)
 
 
-### OUTPUT:
+### 4) Delete the student table using truncate keyword
+### SQL QUERY: 
 
-
-### Q6)	List the names of employee who are not Managers.
-
-
-### QUERY:
+truncate table student;
 
 
 ### OUTPUT:
+![image](https://github.com/ARUNKUMART9968/G2_DBMS/assets/121215794/a588479f-0b33-4e5a-88cd-e8b2e2069a77)
 
+### 5) Rename the student table to mystudent
+### SQL QUERY: 
 
-### Q7)	List the names of employees not eligible for commission.
-
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q8)	List employees whose name either start or end with ‘s’.
-
-
-### QUERY:
+alter table student rename to mystudent;
 
 
 ### OUTPUT:
+![image](https://github.com/ARUNKUMART9968/G2_DBMS/assets/121215794/0c723764-5e0e-49ce-927b-b1fdd0a03f66)
 
-
-### Q9) Sort emp table in ascending order by hire-date and list ename, job, deptno and hire-date.
-
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q10) List the Details of Employees who have joined before 30 Sept 81.
-
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q11)	List ename, deptno and sal after sorting emp table in ascending order by deptno and then descending order by sal.
-
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q12) List the names of employees not belonging to dept no 30,40 & 10
-
-
-### QUERY:
-
-
-### OUTPUT:
-
-### Q13) Find number of rows in the table EMP
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q14) Find maximum, minimum and average salary in EMP table.
-
-### QUERY:
-
-
-### OUTPUT:
-
-
-### Q15) List the jobs and number of employees in each job. The result should be in the descending order of the number of employees.
-
-### QUERY:
-
-
-### OUTPUT:
+### RESULT:
+To create a student database and execute DDL queries using SQL is executed successfully.
